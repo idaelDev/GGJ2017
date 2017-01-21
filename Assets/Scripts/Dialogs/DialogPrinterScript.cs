@@ -9,16 +9,19 @@ public class DialogPrinterScript : MonoBehaviour {
     public Button[] buttons;
     public Button goButton;
     public CanvasGroup group;
+    public Image timerImg;
+
+    public float timer = 5f;
 
     public delegate void EndOfPrintDelegate();
     public event EndOfPrintDelegate endOfPrintEvent;
 
-    private List<int> baseOrder;
-    private List<int> answersOrder;
+    private Coroutine routineTimer;
 
     void Start()
     {
         MainMenu.Instance.startGameEvent += ShowGroup;
+        ConversationManager.Instance.endGameEvent += HideGroup;
     }
 
     private void ShowGroup()
@@ -26,6 +29,22 @@ public class DialogPrinterScript : MonoBehaviour {
         group.alpha = 1;
         group.interactable = true;
         group.blocksRaycasts = true;
+    }
+
+    private void HideGroup()
+    {
+        group.alpha = 0;
+        group.interactable = false;
+        group.blocksRaycasts = false;
+    }
+
+    public void HideAnswer()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
+        goButton.interactable = false;
     }
 
     public void setupAnswers(string neg, string neu, string pos, string go)
@@ -46,11 +65,25 @@ public class DialogPrinterScript : MonoBehaviour {
 
         goButton.GetComponentInChildren<Text>().text = go;
 
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = true;
+        }
+        goButton.interactable = true;
+
+        routineTimer = StartCoroutine(timerCoroutine());
     }
+
 
     public void PrintDialog(string dial, double time, int state)
     {
         StartCoroutine(PrintCoroutine(dial, time));
+    }
+
+    public void Answer(int val)
+    {
+        ConversationManager.Instance.Answer(val, false);
+        StopCoroutine(routineTimer);
     }
 
     IEnumerator PrintCoroutine(string text, double time)
@@ -58,5 +91,18 @@ public class DialogPrinterScript : MonoBehaviour {
         textUI.text = text;
         yield return new WaitForSeconds((float)time);
         endOfPrintEvent();
+    }
+
+    IEnumerator timerCoroutine()
+    {
+        float t = 0;
+        while(t < timer)
+        {
+            float r = Mathf.Lerp(1, 0, t / timer);
+            t += Time.deltaTime;
+            timerImg.fillAmount = r;
+            yield return 0;
+        }
+        ConversationManager.Instance.Answer(-1, true);
     }
 }

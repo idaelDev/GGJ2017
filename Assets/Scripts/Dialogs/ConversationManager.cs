@@ -51,32 +51,29 @@ public class ConversationManager : Singleton<ConversationManager> {
     {
         if (phraseInTopic == 0)
         {
-            if (currentTopicID < DialogStore.Instance.MaxTopicId)
+            topic = DialogStore.Instance.GetTopic(currentTopicID, NegociatorState);
+        }
+        if(currentTopicID >= DialogStore.Instance.MaxTopicId)
+        {
+            ///GAME OVER
+            Debug.Log("GAME OVER");
+            DialogObject dial;
+            if (NegociatorState < 0)
             {
-                topic = DialogStore.Instance.GetTopic(currentTopicID, NegociatorState);
+                dial = DialogStore.Instance.GetBonus(END_TOPICS_NEG);
+            }
+            else if (NegociatorState > 0)
+            {
+                dial = DialogStore.Instance.GetBonus(END_TOPICS_POS);
             }
             else
             {
-                ///GAME OVER
-                Debug.Log("GAME OVER");
-                DialogObject dial;
-                if (NegociatorState < 0)
-                {
-                    dial = DialogStore.Instance.GetBonus(END_TOPICS_NEG);
-                }
-                else if(NegociatorState > 0)
-                {
-                    dial = DialogStore.Instance.GetBonus(END_TOPICS_POS);
-                }
-                else
-                {
-                    dial = DialogStore.Instance.GetBonus(END_TOPICS_NEU);
-                }
-
-                switchToEnd();
-                printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
-                ///
+                dial = DialogStore.Instance.GetBonus(END_TOPICS_NEU);
             }
+
+            switchToEnd();
+            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
+            ///
         }
         else
         {
@@ -102,62 +99,85 @@ public class ConversationManager : Singleton<ConversationManager> {
 
     private void EndGame()
     {
-
+        endGameEvent();
     }
 
-    public void Answer(int type)
+    public void Answer(int type, bool endByTimer)
     {
-
+        printer.HideAnswer();
         NegociatorState += type;
         globalScore += type;
         //Compute stop conditions
         if (NegociatorState == lastState)
         {
             stopCounter++;
-            if (stopCounter >= 3)
+        }
+        if (stopCounter >= 3)
+        {
+            ///END GAME
+            DialogObject dial;
+            if (NegociatorState < 0)
             {
-                ///END GAME
-                DialogObject dial;
-                if (NegociatorState < 0)
-                {
-                    dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEG);
-                }
-                else if (NegociatorState > 0)
-                {
-                    dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_POS);
-                }
-                else
-                {
-                    dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEU);
-                }
-
-                switchToEnd();
-                printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
-                ///
+                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEG);
             }
+            else if (NegociatorState > 0)
+            {
+                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_POS);
+            }
+            else
+            {
+                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEU);
+            }
+
+            switchToEnd();
+            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
+            ///
         }
         else
         {
             stopCounter = 0;
-            if (type < 0)
+            if (endByTimer)
             {
+
+                ////ADD BONUS PHRASE HERE
                 printer.PrintDialog(topic.NegativeTransition, 1, NegociatorState);
                 if (NegociatorState < 0)
                 {
                     globalScore--;
                 }
             }
-            else if (type > 0)
-            {
-                printer.PrintDialog(topic.PositiveTransition, 1, NegociatorState);
-                if (NegociatorState < 0)
-                {
-                    globalScore++;
-                }
-            }
             else
             {
-                printer.PrintDialog(topic.NeutralTransition, 1, NegociatorState);
+                if (type < 0)
+                {
+                    printer.PrintDialog(topic.NegativeTransition, 1, NegociatorState);
+                    if (NegociatorState < 0)
+                    {
+                        globalScore--;
+                        if (NegociatorState < -1)
+                        {
+                            leaveSteps++;
+                            NegociatorState = -1;
+                        }
+                    }
+                }
+                else if (type > 0)
+                {
+                    printer.PrintDialog(topic.PositiveTransition, 1, NegociatorState);
+                    if (NegociatorState > 0)
+                    {
+                        globalScore++;
+                        if (NegociatorState > 1)
+                        {
+                            leaveSteps++;
+                            NegociatorState = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    printer.PrintDialog(topic.NeutralTransition, 1, NegociatorState);
+                }
             }
             currentTopicID++;
 
@@ -168,6 +188,7 @@ public class ConversationManager : Singleton<ConversationManager> {
 
     public void GoAnswer()
     {
+        printer.HideAnswer();
         printer.PrintDialog(topic.LeaveTransition, 1, NegociatorState);
         leaveSteps--;
         if(leaveSteps <= 0)

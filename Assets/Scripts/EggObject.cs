@@ -21,6 +21,7 @@ public class EggObject : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         MainMenu.Instance.startGameEvent += StartCooking;
+        ConversationManager.Instance.endGameEvent += endCook;
     }
 
     // Update is called once per frame
@@ -43,12 +44,19 @@ public class EggObject : MonoBehaviour {
         {
             cookSpeed *= cookSpeedMultiplierDown;
         }
-        Debug.Log(cookSpeed);
+
         cookPercent += cookSpeed * Time.deltaTime;
     }
 
     private void StartCooking()
     {
         isCookingStarted = true;
+        GetComponent<AudioSource>().Play();
+    }
+
+    private void endCook()
+    {
+        isCookingStarted = false;
+        GetComponent<AudioSource>().Stop();
     }
 }
