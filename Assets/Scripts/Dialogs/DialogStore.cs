@@ -91,4 +91,10 @@ public class DialogStore : Singleton<DialogStore>
         else
             return neutralTopics[id];
     }
+
+    public DialogObject GetBonus(int id)
+    {
+        return bonus[id];
+    }
+
 }
