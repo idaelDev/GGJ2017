@@ -11,6 +11,7 @@ public class DialogPrinterScript : MonoBehaviour {
     public CanvasGroup group;
     public Image timerImg;
 
+
     public float timer = 5f;
 
     public delegate void EndOfPrintDelegate();

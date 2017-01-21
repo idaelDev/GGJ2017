@@ -15,6 +15,10 @@ public class EggObject : MonoBehaviour {
 
     Animator anim;
 
+    public AudioSource wellCookedAudio;
+    public AudioClip[] audioclips;
+
+
     private bool isCookingStarted = false;
 
     void Start()
@@ -58,5 +62,19 @@ public class EggObject : MonoBehaviour {
     {
         isCookingStarted = false;
         GetComponent<AudioSource>().Stop();
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("EggStep4"))
+        {
+            wellCookedAudio.clip = audioclips[1];
+        }
+        else if(anim.GetCurrentAnimatorStateInfo(0).IsName("EggStep5") || anim.GetCurrentAnimatorStateInfo(0).IsName("EggStep6"))
+        {
+            wellCookedAudio.clip =  audioclips[2];
+        }
+        else
+        {
+            wellCookedAudio.clip = audioclips[0];
+        }
+        GetComponent<AudioSource>().Stop();
+        wellCookedAudio.Play();
     }
 }

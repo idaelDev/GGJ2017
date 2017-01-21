@@ -40,8 +40,10 @@ public class ConversationManager : Singleton<ConversationManager> {
 
     private int globalScore;
 
-	// Use this for initialization
-	void Start ()
+    public AudioSource audio;
+
+    // Use this for initialization
+    void Start ()
     {
         printer.endOfPrintEvent += NextPhrase;
         MainMenu.instance.startGameEvent += NextPhrase;
@@ -100,6 +102,7 @@ public class ConversationManager : Singleton<ConversationManager> {
     private void EndGame()
     {
         endGameEvent();
+        audio.Play();
     }
 
     public void Answer(int type, bool endByTimer)
