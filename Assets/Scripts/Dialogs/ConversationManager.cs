@@ -146,7 +146,7 @@ public class ConversationManager : Singleton<ConversationManager> {
                 printer.PrintDialog(topic.NegativeTransition, 1, NegociatorState);
                 if (NegociatorState < 0)
                 {
-                    globalScore--;
+                    globalScore-=2;
                 }
             }
             else

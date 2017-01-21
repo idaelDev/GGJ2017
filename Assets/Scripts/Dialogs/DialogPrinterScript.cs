@@ -87,6 +87,12 @@ public class DialogPrinterScript : MonoBehaviour {
         StopCoroutine(routineTimer);
     }
 
+    public void goAnswer()
+    {
+        ConversationManager.Instance.GoAnswer();
+        StopCoroutine(routineTimer);
+    }
+
     IEnumerator PrintCoroutine(string text, double time)
     {
         textUI.text = text;
