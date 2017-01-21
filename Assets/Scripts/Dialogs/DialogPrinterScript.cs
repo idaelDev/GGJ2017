@@ -8,12 +8,25 @@ public class DialogPrinterScript : MonoBehaviour {
     public Text textUI;
     public Button[] buttons;
     public Button goButton;
+    public CanvasGroup group;
 
     public delegate void EndOfPrintDelegate();
     public event EndOfPrintDelegate endOfPrintEvent;
 
     private List<int> baseOrder;
     private List<int> answersOrder;
+
+    void Start()
+    {
+        MainMenu.Instance.startGameEvent += ShowGroup;
+    }
+
+    private void ShowGroup()
+    {
+        group.alpha = 1;
+        group.interactable = true;
+        group.blocksRaycasts = true;
+    }
 
     public void setupAnswers(string neg, string neu, string pos, string go)
     {

@@ -31,13 +31,7 @@ public class ConversationManager : Singleton<ConversationManager> {
 	void Start ()
     {
         printer.endOfPrintEvent += NextPhrase;
-    }
-	void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            NextPhrase();
-        }
+        MainMenu.instance.startGameEvent += NextPhrase;
     }
 
     void NextPhrase()

@@ -1,20 +1,47 @@
-1,1,Negatif 1,,,,
-1,1,Negatif 3,,,,
-1,1,Negatif 5,,,,
-1,1,Negatif 7,,,,
-1,1,Negatif 9,,,,
-1,1,Negatif 11,,,,
-1,1,Negatif 13,Reponse NNeutre,Reponse NPos,Reponse NNeg,Partir
-1,1,,Transition NNeutre,Transition NPos,Transition NNeg,Partir
-2,1,Negatif 14,,,,
-2,1,Negatif 15,,,,
-2,1,Negatif 16,,,,
-2,1,Negatif 17,,,,
-2,1,Negatif 18,Reponse NNeutre,Reponse NPos,Reponse NNeg,Partir
-2,1,,Transition NNeutre,Transition NPos,Transition NNeg,Partir
-3,1,Negatif 14,,,,
-3,1,Negatif 15,,,,
-3,1,Negatif 16,,,,
-3,1,Negatif 17,,,,
-3,1,Negatif 18,Reponse NNeutre,Reponse NPos,Reponse NNeg,Partir
-3,1,,Transition NNeutre,Transition NPos,Transition NNeg,Partir
+1,3,"Anyhow, I just saw Danald Tromp on TV, I'm so glad we have a president that will ACT, not like his lazy predecessors.",,,,
+1,3,"Finally no more mexican! He's going to build a wall, and everything will be over!",I think it's a little more complicated than that...,Yeah! We must BUILD A WALL!,"Oh sure, xenophobia is always the magic solution to everything!","Raccrocher"
+1,1,,"You should read more about politics, my boy.",That's my boy! A true Republican!,"You'll see when the wall will be built, the crime rates will crash!","Raccrocher"
+2,3,I was at death's door a few days ago!,,,,
+2,3,And the only thing that useless doctor said is that I was dangerously overweight!,,,,
+2,3,Can you believe it? As if it had anything to do with my illness!,"Well, as long as he could get you a consultation...",They're really unprofessional.,These bastards! Always trying to save one's life!,"Raccrocher"
+2,1,,I guess you could say that...,Absolutely! Sometimes you have to guess how they got their PhD !,What do you know about medicine!,"Raccrocher"
+3,3,Oh c’est chômeurs… Je t’en ai déjà parlé ?,,,,
+3,3,Cette bande d’incapables pas foutus de se sortir les doigts du cul pour gagner leur vie.,,,,
+3,3,Ils profitent vraiment du système !,Oh tu sais… Le boulot...,Au moins toi tu est en retraite !,Venant d’une retraitée...,"Raccrocher"
+3,3,,Le boulot c'est la vie tout de même !,"Oh oui ! Moi au moins, j’ai fait ma part !",Et alors ! Ce n’est pas ma faute si mon mari savait gagner sa vie !,"Raccrocher"
+4,3,I was watching ToxNews the other day.,,,,
+4,3,I guess people like you don't care about TV but I think it's important to know what's going on in the world.,,,,
+4,3,"They were talking about these ""no go zones"" in Paris, did you know about them?",,,,
+4,3,"They're just nasty thug nests, you ought to open your eyes, my boy!","Yeah, sure, it's important to know what's going on.",Oh you're SO right! Good thing we have true journalists to keep us informed!,Seriously? There's nothing worse than this channel to turn your brain into scrambled eggs!,"Raccrocher"
+4,1,,At least we are on the same page.,Finally someone who sympathizes with other's concerns!,"Once again, completely out of touch! What the heck is my daughter doing with you?","Raccrocher"
+5,3,J'ai retrouvé une photo de Kiki en rangeant le meuble du salon la semaine dernière.,,,,
+5,3,Je n'ai jamais décelé une once d'amour dans ton regard quand il venait te faire la fête.,,,,
+5,3,Mais bon ce n'est un secret pour personne que tu n'as jamais aimé ce pauvre caniche...,,,,
+5,3,"Mefie toi, mon prochain chien sera surement plus gros et tu feras moins le malin.","Ah ça... Les chiens ne sont pas les meilleurs amis de l'Homme pour rien, hein !","J'ai jamais vu un petit chien aussi calin et aussi doux ! Si on pouvait le cloner et en distribuer une copie dans chaque foyer, la misère du monde regresserait sans aucun doute.",Tout le monde déteste ce chien. Il entretenait une relation amour/haine avec mon mollet... Combien de fois j'ai rêvé que je shootais dans ce sale roquet !,
+5,1,,Jamais une phrase n'a sonné aussi vrai ! ,Quel adorable petit bonhomme ! Vous ne pouvez pas me faire plus plaisir !,Il n'y a pas de place au Ciel pour les sacs à merdes comme toi.,
+6,3,"Bah tiens, hier je suis allée au supermarché.",,,,
+6,3,Je venais pour prendre mon bon vieux KG de pommes de terre et j'ai remarqué que la moitié du rayon avait été remplacé par cette saloperie de quinoa.,,,,
+6,3,C'est quoi cette jeunesse de mous du genou qui ne sait plus ce que c'est que de se nourrir correctement ?,,,,
+6,3,"Au lieu de bosser, ça passe son temps dans des manifestations à beugler des slogans débiles contre le réchauffement climatique.",,,,
+6,3,"Je te collerai une bonne guerre à tout ça moi, tu verras, le sort des baleines leur paraitra moins dramatique !",Tout le monde sait bien que de la bonne viande fraiche aux hormones n'a jamais fait de mal à personne.,Je n'ai jamais pu supporter ces personnes plus concernées par des bestioles que par leurs comparses humains !,"Bien sûr, nous savons tous que le rumsteack et la cuisine au beurre ont bien réussi aux artères de votre mari...",
+6,1,,Mais je l'ai moi-même toujours dit !,Ravie de votre réponse ! Personne n'a envie d'un gendre ramollo !,J'ai de la peine à savoir si vous essayez de m'énerver ou de me briser le coeur ! VOUS ETES L'UN DES LEURS ???,
+7,3,TransportNeg1,,,,
+7,3,TransportNeg2,,,,
+7,3,TransportPos3,TransportNEU,TransportPOS,TransportNEG,
+7,1,,TransTransportNEU,TransTransportPOS,TransTranportNEG,
+8,3,Et puis vous ! Bande de jeunes drogués au écran !,,,,
+8,3,Vous allez tous devenir terroriste avec ces “jeux vidéals” violents !,,,,
+8,3,De mon temps une bonne discipline et un bilboquet ca forgeait un homme !,Ca vaut aussi bien qu'un bon livre.,Vous avez absolument raison ! Quel ignare que je suis !,"C’est sur que du temps des dinosaures, c’était compliqué de se divertir.","Raccrocher"
+8,1,,"Mais enfin, vous comparez deux choses complètement différentes ! Vos écrans là, c’est pas de l’art !",Mais évidemment que je sais mon petit ! Ne vous inquiétez pas je vais vous aider !,Je ne vous permet pas ! Mon expérience pourrait vous être primordiale si vous saviez comment en prendre compte.,"Raccrocher"
+9,3,Oh ! Et il y a encore cette satanée machine démoniaque qui fait encore des siennes à ne plus vouloir s’allumer.,,,,
+9,3,C’est vraiment de la pacotille votre informatique la !,,,,
+9,3,On fait tomber un tout petit verre d’eau dessus et c’est pas capable de fonctionner !,"Ah, bah faut appeler un réparateur informatique.",Laissez moi vous aidez la prochaine fois que je passe !,"Mettez les doigts dans la prise la prochaine fois, ca arrangera peut être quelque chose.",
+9,1,,"Humpf… Oui, c’est vrai que c’est une solution.","Oh, que vous êtes bien aimable ! Ma fille a de la chance de vous avoir !",Comment osez vous me parler de la sorte !,
+10,3,J'étais au bal des Vieux Dansants la semaine dernière.,,,,
+10,3,J'ai croisé Germaine et son dentier flambant neuf.,,,,
+10,3,Je la vois bien faire ses petits sourires fourbes à René.,,,,
+10,3,"Au club, c'est le dernier homme encore potable qui entend encore plus d'un mot sur 5.",,,,
+10,3,Cette garce sait très bien qu'il est pour moi depuis que Jean à claqué sa pile il y a 5 mois.,,,,
+10,3,"Personne ne peut rien me refuser, ni elle ni vous !",,,,
+10,3,"Je sens qu'un dentier et par la même occasion, une amitié bancale, vont bientôt mysterieusement disparaitre de manière definitivement définitive.",Cette Germaine manque un peu de manière...,"Quelle honte ! Personne ne peut se prétendre ""ami"" avec un comportement pareil !",Quelle idée de se battre pour un vieux veuf sénil à moitié dans la tombe...,"Raccrocher"
+10,1,,Je vois où vous voulez en venir mais affirmez vous un peu voyons !,Je savais qu'il y avait du bon en vous ! Je pense  de plus en plus sérieusement à finir mes vieux jours dans votre chambre d'amis.,Vous n'avez aucun respect pour vos ainés ! J'espère que vos chiards mollassons vous laisserons mourir tout seul en maison de retraite !,"Raccrocher"

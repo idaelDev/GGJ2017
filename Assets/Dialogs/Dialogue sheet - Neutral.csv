@@ -1,20 +1,47 @@
-0,1,Neutre 1,,,,
-0,1,Neutre 2,,,,
-0,1,Neutre 3,,,,
-0,1,Neutre 4,,,,
-0,1,Neutre 5,,,,
-0,1,Neutre 6,,,,
-0,1,Neutre 7,Reponse NNeutre,Reponse NPos,Reponse NNeg,Partir
-0,1,,Transition NNeutre,Transition NPos,Transition NNeg,Partir
-1,1,Neutre 9,,,,
-1,1,Neutre 10,,,,
-1,1,Neutre 11,,,,
-1,1,Neutre 12,,,,
-1,1,Neutre 13,Reponse NNeutre,Reponse NPos,Reponse NNeg,Partir
-1,1,,Transition NNeutre,Transition NPos,Transition NNeg,Partir
-2,1,Neutre 9,,,,
-2,1,Neutre 10,,,,
-2,1,Neutre 11,,,,
-2,1,Neutre 12,,,,
-2,1,Neutre 13,Reponse NNeutre,Reponse NPos,Reponse NNeg,Partir
-2,1,,Transition NNeutre,Transition NPos,Transition NNeg,Partir
+0,3,"Intro 1",,,,
+0,3,Intro 2,,,,
+0,1,Intro 3,NEU,POS,NEG,"Raccrocher"
+,,,Transi NEU,Transi POS,Transi NEG,"Raccrocher"
+1,3,"Oh, did you know Danald Tromp is now officially the new President of the United States?",,,,
+1,3,"I can't wait for that wall to be built, I can't stand those mexicans...",I think it's a little more complicated than that...,Yeah! We must BUILD A WALL!,"Oh sure, xenophobia is always the magic solution to everything!",
+1,1,,"You should read more about politics, my boy.",That's my boy! A true Republican!,"You'll see when the wall will be built, the crime rates will crash!",
+2,3,"I had the flu the other day, so I went to the doctor.",,,,
+2,3,I had to wait three hours before being received!,"Well, as long as he could get you a consultation...",They're really unprofessional.,These bastards! Always trying to save one's life!,"Raccrocher"
+2,1,,I guess you could say that...,Absolutely! Sometimes you have to guess how they got their PhD !,What do you know about medicine!,"Raccrocher"
+3,3,Et puis regarde tout ces ramiers qui ne cherchent pas de travail… ,,,,
+3,3,"C’est navrant tout de même, ils ne savent pas faire grand chose de leur vie, et ne tente même pas d’essayer ! ",Oh tu sais… Le boulot...,Au moins toi tu est en retraite !,Venant d’une retraitée...,"Raccrocher"
+3,1,,Le boulot c'est la vie tout de même !,"Oh oui ! Moi au moins, j’ai fait ma part !",Et alors ! Ce n’est pas ma faute si mon mari savait gagner sa vie !,"Raccrocher"
+4,3,I was watching ToxNews the other day.,,,,
+4,3,It's so nice to know what's happening in the world.,,,,
+4,3,"Did you hear about these ""no go zones"" in Paris?",,,,
+4,3,"Streets aren't safe anymore, with these thugs everywhere.",,,,
+4,3,And we don't even know half of it...,"Yeah, sure, it's important to know what's going on.",Oh you're SO right! Good thing we have true journalists to keep us informed!,Seriously? There's nothing worse than this channel to turn your brain into scrambled eggs!,"Raccrocher"
+4,1,,At least we are on the same page.,Finally someone who sympathizes with other's concerns!,"Once again, completely out of touch! What the heck is my daughter doing with you?","Raccrocher"
+5,3,J'ai retrouvé une photo de Kiki en rangeant le meuble du salon la semaine dernière.,,,,
+5,3,Il n'existe rien de plus fidèle et adorable qu'un petit caniche !,,,,
+5,3,"Je sais que ni le facteur, ni les voisins, ni les mômes du quartier, ni ma belle-soeur, ni les prospecteurs étaient de mon avis",,,,
+5,3,mais nous savons bien que ce sont des sâles grincheux incapables d'aimer !,"Ah ça... Les chiens ne sont pas les meilleurs amis de l'Homme pour rien, hein !","J'ai jamais vu un petit chien aussi calin et aussi doux ! Si on pouvait le cloner et en distribuer une copie dans chaque foyer, la misère du monde regresserait sans aucun doute.",Tout le monde déteste ce chien. Il entretenait une relation amour/haine avec mon mollet... Combien de fois j'ai rêvé que je shootais dans ce sale roquet !,"Raccrocher"
+5,1,,Jamais une phrase n'a sonné aussi vrai ! ,Quel adorable petit bonhomme ! Vous ne pouvez pas me faire plus plaisir !,Il n'y a pas de place au Ciel pour les sacs à merdes comme toi.,"Raccrocher"
+6,3,"Bah tiens, hier je suis allée au supermarché.",,,,
+6,3,Je venais pour me ravitailler en pommes de terre et j'ai remarqué que la moitié du rayon avait été remplacé par cette saloperie de quinoa.,,,,
+6,3,Encore un coup de ces hispters avec leur barbe degueulasse qui ne bouffent que de la salade.,,,,
+6,3,On peut plus choisir ses patates tranquillement.,Tout le monde sait bien que de la bonne viande fraiche aux hormones n'a jamais fait de mal à personne.,Je n'ai jamais pu supporter ces personnes plus concernées par des bestioles que par leurs comparses humains !,"Bien sûr, nous savons tous que le rumsteack et la cuisine au beurre ont bien réussi aux artères de votre mari...","Raccrocher"
+6,1,,Mais je l'ai moi-même toujours dit !,Ravie de votre réponse ! Personne n'a envie d'un gendre ramollo !,J'ai de la peine à savoir si vous essayez de m'énerver ou de me briser le coeur ! VOUS ETES L'UN DES LEURS ???,"Raccrocher"
+7,3,TransportNeu1,,,,
+7,3,TransportNeu2,,,,
+7,3,TransportNeu3,TransportNEU,TransportPOS,TransportNEG,"Raccrocher"
+7,1,,TransTransportNEU,TransTransportPOS,TransTranportNEG,"Raccrocher"
+8,3,Franchement cette époque n’est plus de mon âge quand je vous vois avec vos “jeux vidéal” là.,,,,
+8,3,"Ca doit sacrément vous abrutir ! De mon temps, il nous fallait peu de chose pour nous divertir.",,,,
+8,3,"Pas besoin de tout ces écrans, on travaillait nous !",Ca vaut aussi bien qu'un bon livre.,Vous avez absolument raison ! Quel ignare que je suis !,"C’est sur que du temps des dinosaures, c’était compliqué de se divertir.","Raccrocher"
+8,1,,"Mais enfin, vous comparez deux choses complètement différentes ! Vos écrans là, c’est pas de l’art !",Mais évidemment que je sais mon petit ! Ne vous inquiétez pas je vais vous aider !,Je ne vous permet pas ! Mon expérience pourrait vous être primordiale si vous saviez comment en prendre compte.,"Raccrocher"
+9,3,"Tiens, j’ai encore un problême avec mon ordinateur.",,,,
+9,3,J’ai voulu lire un mail que m’a envoyé ma copine Gemraine et il m’a affiché un écran tout bleu...,,,,
+9,3,Impossible de jouer a mon jeu de cartes en ligne !,"Ah, bah faut appeler un réparateur informatique.",Laissez moi vous aidez la prochaine fois que je passe !,"Mettez les doigts dans la prise la prochaine fois, ca arrangera peut être quelque chose.","Raccrocher"
+9,1,,"Humpf… Oui, c’est vrai que c’est une solution.","Oh, que vous êtes bien aimable ! Ma fille a de la chance de vous avoir !",Comment osez vous me parler de la sorte !,"Raccrocher"
+10,3,J'étais au bal des Vieux Dansants la semaine dernière.,,,,
+10,3,J'ai croisé Germaine et son dentier flambant neuf.,,,,
+10,3,Je la vois bien faire ses petits sourires à René.,,,,
+10,3,"Au club, c'est le dernier homme encore potable qui entend encore plus d'un mot sur 5.",,,,
+10,3,"Germaine sait très bien qu'il est pour moi, comment peut-elle me faire ça à moi, sa meilleure amie ?""",Cette Germaine manque un peu de manière...,"Quelle honte ! Personne ne peut se prétendre ""ami"" avec un comportement pareil !",Quelle idée de se battre pour un vieux veuf sénil à moitié dans la tombe...,"Raccrocher"
+10,1,,Je vois où vous voulez en venir mais affirmez vous un peu voyons !,Je savais qu'il y avait du bon en vous ! Je pense  de plus en plus sérieusement à finir mes vieux jours dans votre chambre d'amis.,Vous n'avez aucun respect pour vos ainés ! J'espère que vos chiards mollassons vous laisserons mourir tout seul en maison de retraite !,"Raccrocher"
