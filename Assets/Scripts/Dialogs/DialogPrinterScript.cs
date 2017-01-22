@@ -26,7 +26,7 @@ public class DialogPrinterScript : MonoBehaviour {
         ConversationManager.Instance.endGameEvent += HideGroup;
     }
 
-    private void ShowGroup()
+    public void ShowGroup()
     {
         group.alpha = 1;
         group.interactable = true;
