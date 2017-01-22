@@ -6,22 +6,15 @@ using System.Collections;
 /// </summary>
 public class ConversationManager : Singleton<ConversationManager> {
 
-    const int END_TOPICS_POS = 0; //done
-    const int END_TOPICS_NEU = 1; //done
-    const int END_TOPICS_NEG = 2; //done
-    const int MALUS_STOP_CONV_POS = 3;//done
-    const int MALUS_STOP_CONV_NEU = 4;//done
-    const int MALUS_STOP_CONV_NEG = 5;//done
-    const int STOP_3_FAIL_POS = 6;//done
-    const int STOP_3_FAIL_NEU = 7;//done
-    const int STOP_3_FAIL_NEG = 8;//done
-    const int PLAYER_END_POS = 9;//done
-    const int PLAYER_END_NEU = 10;//done
-    const int PLAYER_END_NEG = 11;//done
-    const int END_TIMER_POS = 12;
-    const int END_TIMER_NEU = 13;
-    const int END_TIMER_NEG = 14;
-
+    const int END_TOPICS_POS = 0;
+    const int END_TOPICS_NEU = 1;
+    const int END_TOPICS_NEG = 2;
+    const int MALUS_STOP_CONV_POS = 3;
+    const int MALUS_STOP_CONV_NEU = 4;
+    const int MALUS_STOP_CONV_NEG = 5;
+    const int STOP_3_FAIL_POS = 6;
+    const int STOP_3_FAIL_NEU = 7;
+    const int STOP_3_FAIL_NEG = 8;
 
     public DialogPrinterScript printer;
 
@@ -71,9 +64,22 @@ public class ConversationManager : Singleton<ConversationManager> {
         {
             ///GAME OVER
             Debug.Log("GAME OVER");
-            switchToEnd();
-            LaunchBonusPhrases(END_TOPICS_NEU, END_TOPICS_POS, END_TOPICS_NEG);
+            DialogObject dial;
+            if (NegociatorState < 0)
+            {
+                dial = DialogStore.Instance.GetBonus(END_TOPICS_NEG);
+            }
+            else if (NegociatorState > 0)
+            {
+                dial = DialogStore.Instance.GetBonus(END_TOPICS_POS);
+            }
+            else
+            {
+                dial = DialogStore.Instance.GetBonus(END_TOPICS_NEU);
+            }
 
+            switchToEnd();
+            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
             ///
         }
         else
@@ -111,14 +117,31 @@ public class ConversationManager : Singleton<ConversationManager> {
             stateRepetitionCount = 0;
         }
 
-        //..
 
         if (stateRepetitionCount >= 3)
         {
+            ///END GAME
+            DialogObject dial;
+            if (NegociatorState < 0)
+            {
+                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEG);
+            }
+            else if (NegociatorState > 0)
+            {
+                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_POS);
+            }
+            else
+            {
+                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEU);
+            }
 
             switchToEnd();
-            LaunchBonusPhrases(STOP_3_FAIL_NEU, STOP_3_FAIL_POS, STOP_3_FAIL_NEG);
+            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
+            ///
         }
+
+        //..
+
         else
         {
 
@@ -126,7 +149,7 @@ public class ConversationManager : Singleton<ConversationManager> {
             {
 
                 ////ADD BONUS PHRASE HERE
-                LaunchBonusPhrases(END_TIMER_NEU, END_TIMER_POS, END_TIMER_NEG);
+                printer.PrintDialog(topic.NegativeTransition, 4, NegociatorState);
                 if (NegociatorState < 0)
                 {
                     globalScore -= 2;
@@ -170,6 +193,8 @@ public class ConversationManager : Singleton<ConversationManager> {
 
     }
 
+    private void StateTest()
+
     public void GoAnswer()
     {
         printer.HideAnswer();
@@ -179,38 +204,27 @@ public class ConversationManager : Singleton<ConversationManager> {
         {
             Debug.Log("GAME OVER");
             switchToEnd();
-            LaunchBonusPhrases(PLAYER_END_NEU, PLAYER_END_POS, PLAYER_END_NEG);
         }
         else
         {
             ///END GAME
-            LaunchBonusPhrases(MALUS_STOP_CONV_NEU, MALUS_STOP_CONV_POS,MALUS_STOP_CONV_NEG);
+            DialogObject dial;
+            if (NegociatorState < 0)
+            {
+                dial = DialogStore.Instance.GetBonus(MALUS_STOP_CONV_NEG);
+            }
+            else if (NegociatorState > 0)
+            {
+                dial = DialogStore.Instance.GetBonus(MALUS_STOP_CONV_POS);
+            }
+            else
+            {
+                dial = DialogStore.Instance.GetBonus(MALUS_STOP_CONV_NEU);
+            }
+            globalScore--;
+            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
+            ///
         }
-    }
-
-
-    /// <summary>
-    /// Launch special phrases function of the state
-    /// </summary>
-    /// <param name="neu"></param>
-    /// <param name="pos"></param>
-    /// <param name="neg"></param>
-    private void LaunchBonusPhrases(int neu, int pos, int neg)
-    {
-        DialogObject dial;
-        if (NegociatorState < 0)
-        {
-            dial = DialogStore.Instance.GetBonus(neg);
-        }
-        else if (NegociatorState > 0)
-        {
-            dial = DialogStore.Instance.GetBonus(pos);
-        }
-        else
-        {
-            dial = DialogStore.Instance.GetBonus(neu);
-        }
-        printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
     }
 
     private void switchToEnd()
