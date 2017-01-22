@@ -5,8 +5,12 @@ public class PhoneAnimationScript : MonoBehaviour {
 
     Animator anim;
     public Animator momAnimator;
+    public Animator endAnimator;
     public SpriteRenderer sr;
     public SpriteRenderer momRenderer;
+    public SpriteRenderer call;
+
+    public Sprite[] momsHead;
 
     void Start()
     {
@@ -20,6 +24,7 @@ public class PhoneAnimationScript : MonoBehaviour {
 
     void startWaves()
     {
+        call.enabled = false;
         anim.enabled = true;
         momAnimator.enabled = true;
     }
@@ -29,8 +34,9 @@ public class PhoneAnimationScript : MonoBehaviour {
         anim.enabled = false;
         momAnimator.enabled = false;
         sr.enabled = false;
-        momRenderer.enabled = false;
+        endAnimator.SetTrigger("End");
 
+        momRenderer.sprite = momsHead[ConversationManager.Instance.GetScoreEvaluation() + 1];
     }
 
 

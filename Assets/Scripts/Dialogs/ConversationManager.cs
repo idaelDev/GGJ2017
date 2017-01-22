@@ -225,7 +225,18 @@ public class ConversationManager : Singleton<ConversationManager> {
     }
 
    
-
+    public int GetScoreEvaluation()
+    {
+        if(globalScore > 2)
+        {
+            return 1;
+        }
+        else if(globalScore < -2)
+        {
+            return -1;
+        }
+        return 0;
+    }
     
 
 }

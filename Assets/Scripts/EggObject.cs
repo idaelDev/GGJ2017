@@ -18,6 +18,7 @@ public class EggObject : MonoBehaviour {
     public AudioSource wellCookedAudio;
     public AudioClip[] audioclips;
 
+    public int EggState = 0;
 
     private bool isCookingStarted = false;
 
@@ -37,6 +38,7 @@ public class EggObject : MonoBehaviour {
             if(cookPercent > 125.0f)
             {
                 ConversationManager.Instance.EndGame();
+                EggState++;
             }
         }
     }
@@ -52,7 +54,7 @@ public class EggObject : MonoBehaviour {
         {
             cookSpeed *= cookSpeedMultiplierDown;
         }
-
+        
         cookPercent += cookSpeed * Time.deltaTime;
     }
 
@@ -80,5 +82,11 @@ public class EggObject : MonoBehaviour {
         }
         GetComponent<AudioSource>().Stop();
         wellCookedAudio.Play();
+    }
+
+    public void StateChange(int newState)
+    {
+        if(newState != EggState)
+            EggState = newState;
     }
 }
