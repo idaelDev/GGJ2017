@@ -55,6 +55,7 @@ public class ConversationManager : Singleton<ConversationManager> {
 
     void NextPhrase()
     {
+        NegociatorState = Mathf.Clamp(NegociatorState, -1, 1);
         if (phraseInTopic == 0)
         {
             topic = DialogStore.Instance.GetTopic(currentTopicID, NegociatorState);
@@ -115,7 +116,7 @@ public class ConversationManager : Singleton<ConversationManager> {
         NegociatorState += type;
         globalScore += type;
         //Compute stop conditions
-        if (NegociatorState == lastState)
+        if (NegociatorState == lastState || NegociatorState > 1 || NegociatorState < -1)
         {
             stopCounter++;
         }
@@ -186,7 +187,7 @@ public class ConversationManager : Singleton<ConversationManager> {
             }
             currentTopicID++;
 
-            lastState = NegociatorState;
+            lastState = Mathf.Clamp(NegociatorState, -1, 1);
         }
 
     }
