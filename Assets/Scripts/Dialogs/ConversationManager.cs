@@ -6,15 +6,32 @@ using System.Collections;
 /// </summary>
 public class ConversationManager : Singleton<ConversationManager> {
 
-    const int END_TOPICS_POS = 0;
-    const int END_TOPICS_NEU = 1;
-    const int END_TOPICS_NEG = 2;
-    const int MALUS_STOP_CONV_POS = 3;
-    const int MALUS_STOP_CONV_NEU = 4;
-    const int MALUS_STOP_CONV_NEG = 5;
-    const int STOP_3_FAIL_POS = 6;
-    const int STOP_3_FAIL_NEU = 7;
-    const int STOP_3_FAIL_NEG = 8;
+    const int END_TOPICS_POS = 0; //done
+    const int END_TOPICS_NEU = 1; //done
+    const int END_TOPICS_NEG = 2; //done
+    const int MALUS_STOP_CONV_POS = 3;//done
+    const int MALUS_STOP_CONV_NEU = 4;//done
+    const int MALUS_STOP_CONV_NEG = 5;//done
+    const int STOP_3_FAIL_POS = 6;//done
+    const int STOP_3_FAIL_NEU = 7;//done
+    const int STOP_3_FAIL_NEG = 8;//done
+    const int PLAYER_END_POS = 9;//done
+    const int PLAYER_END_NEU = 10;//done
+    const int PLAYER_END_NEG = 11;//done
+    const int END_TIMER_POS = 12;
+    const int END_TIMER_NEU = 13;
+    const int END_TIMER_NEG = 14;
+
+
+    public DialogPrinterScript printer;
+
+#region Delegates
+    public delegate void EndGameDelegate();
+    public event EndGameDelegate endGameEvent;
+
+    public delegate void StateChangeDelegate(int val);
+    public event StateChangeDelegate stateChangeEvent; 
+#endregion
 
     /// <summary>
     /// The state of the negociator. ARBITRARY AND REALLY MESSY
@@ -25,26 +42,16 @@ public class ConversationManager : Singleton<ConversationManager> {
     private int negociatorState;
     public int NegociatorState { get { return negociatorState; } private set { negociatorState = value; stateChangeEvent(negociatorState); } }
 
-    public delegate void EndGameDelegate();
-    public event EndGameDelegate endGameEvent;
-
-    public delegate void StateChangeDelegate(int val);
-    public event StateChangeDelegate stateChangeEvent;
-
     private int currentTopicID = 0;
     private TopicObject topic;
 
     private int phraseInTopic = 0;
 
-    public DialogPrinterScript printer;
-
-    private int lastState = 0;
-    private int stopCounter = 0;
-    private int leaveSteps = 0; //how much time the player have to use the "leave" button
+    private int previousState = 0;
+    private int stateRepetitionCount = 0;
+    private int numberOfStepForLeaving = 0; //how much time the player have to use the "leave" button
 
     private int globalScore;
-
-    public AudioSource audio;
 
     // Use this for initialization
     void Start ()
@@ -64,22 +71,9 @@ public class ConversationManager : Singleton<ConversationManager> {
         {
             ///GAME OVER
             Debug.Log("GAME OVER");
-            DialogObject dial;
-            if (NegociatorState < 0)
-            {
-                dial = DialogStore.Instance.GetBonus(END_TOPICS_NEG);
-            }
-            else if (NegociatorState > 0)
-            {
-                dial = DialogStore.Instance.GetBonus(END_TOPICS_POS);
-            }
-            else
-            {
-                dial = DialogStore.Instance.GetBonus(END_TOPICS_NEU);
-            }
-
             switchToEnd();
-            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
+            LaunchBonusPhrases(END_TOPICS_NEU, END_TOPICS_POS, END_TOPICS_NEG);
+
             ///
         }
         else
@@ -98,60 +92,43 @@ public class ConversationManager : Singleton<ConversationManager> {
         }
     }
 
-    private void switchToEnd()
-    {
-        printer.endOfPrintEvent -= NextPhrase;
-        printer.endOfPrintEvent += EndGame;
-    }
-
-    private void EndGame()
-    {
-        endGameEvent();
-        audio.Play();
-    }
-
     public void Answer(int type, bool endByTimer)
     {
+        //SetGraphics
         printer.HideAnswer();
+
+        //Update the grandmaState and Score
         NegociatorState += type;
         globalScore += type;
-        //Compute stop conditions
-        if (NegociatorState == lastState || NegociatorState > 1 || NegociatorState < -1)
-        {
-            stopCounter++;
-        }
-        if (stopCounter >= 3)
-        {
-            ///END GAME
-            DialogObject dial;
-            if (NegociatorState < 0)
-            {
-                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEG);
-            }
-            else if (NegociatorState > 0)
-            {
-                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_POS);
-            }
-            else
-            {
-                dial = DialogStore.Instance.GetBonus(STOP_3_FAIL_NEU);
-            }
 
-            switchToEnd();
-            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
-            ///
+        //Compute stop conditions
+        if (NegociatorState == previousState || NegociatorState > 1 || NegociatorState < -1)
+        {
+            stateRepetitionCount++;
         }
         else
         {
-            stopCounter = 0;
+            stateRepetitionCount = 0;
+        }
+
+        //..
+
+        if (stateRepetitionCount >= 3)
+        {
+
+            switchToEnd();
+            LaunchBonusPhrases(STOP_3_FAIL_NEU, STOP_3_FAIL_POS, STOP_3_FAIL_NEG);
+        }
+        else
+        {
+
             if (endByTimer)
             {
 
-                ////ADD BONUS PHRASE HERE
-                printer.PrintDialog(topic.NegativeTransition, 4, NegociatorState);
+                LaunchBonusPhrases(END_TIMER_NEU, END_TIMER_POS, END_TIMER_NEG);
                 if (NegociatorState < 0)
                 {
-                    globalScore-=2;
+                    globalScore -= 2;
                 }
             }
             else
@@ -164,7 +141,7 @@ public class ConversationManager : Singleton<ConversationManager> {
                         globalScore--;
                         if (NegociatorState < -1)
                         {
-                            leaveSteps++;
+                            numberOfStepForLeaving++;
                         }
                     }
                 }
@@ -176,7 +153,7 @@ public class ConversationManager : Singleton<ConversationManager> {
                         globalScore++;
                         if (NegociatorState > 1)
                         {
-                            leaveSteps++;
+                            numberOfStepForLeaving++;
                         }
                     }
                 }
@@ -187,7 +164,7 @@ public class ConversationManager : Singleton<ConversationManager> {
             }
             currentTopicID++;
 
-            lastState = Mathf.Clamp(NegociatorState, -1, 1);
+            previousState = Mathf.Clamp(NegociatorState, -1, 1);
         }
 
     }
@@ -196,33 +173,60 @@ public class ConversationManager : Singleton<ConversationManager> {
     {
         printer.HideAnswer();
         printer.PrintDialog(topic.LeaveTransition, 4, NegociatorState);
-        leaveSteps--;
-        if(leaveSteps <= 0)
+        numberOfStepForLeaving--;
+        if (numberOfStepForLeaving <= 0)
         {
             Debug.Log("GAME OVER");
             switchToEnd();
+            LaunchBonusPhrases(PLAYER_END_NEU, PLAYER_END_POS, PLAYER_END_NEG);
         }
         else
         {
             ///END GAME
-            DialogObject dial;
-            if (NegociatorState < 0)
-            {
-                dial = DialogStore.Instance.GetBonus(MALUS_STOP_CONV_NEG);
-            }
-            else if (NegociatorState > 0)
-            {
-                dial = DialogStore.Instance.GetBonus(MALUS_STOP_CONV_POS);
-            }
-            else
-            {
-                dial = DialogStore.Instance.GetBonus(MALUS_STOP_CONV_NEU);
-            }
-            globalScore--;
-            printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
-            ///
+            LaunchBonusPhrases(MALUS_STOP_CONV_NEU, MALUS_STOP_CONV_POS,MALUS_STOP_CONV_NEG);
         }
     }
+
+
+    /// <summary>
+    /// Launch special phrases function of the state
+    /// </summary>
+    /// <param name="neu"></param>
+    /// <param name="pos"></param>
+    /// <param name="neg"></param>
+    private void LaunchBonusPhrases(int neu, int pos, int neg)
+    {
+        DialogObject dial;
+        if (NegociatorState < 0)
+        {
+            dial = DialogStore.Instance.GetBonus(neg);
+        }
+        else if (NegociatorState > 0)
+        {
+            dial = DialogStore.Instance.GetBonus(pos);
+        }
+        else
+        {
+            dial = DialogStore.Instance.GetBonus(neu);
+        }
+        printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
+    }
+
+    private void switchToEnd()
+    {
+        printer.endOfPrintEvent -= NextPhrase;
+        printer.endOfPrintEvent += EndGame;
+    }
+
+    public void EndGame()
+    {
+        endGameEvent();
+        GetComponent<AudioSource>().Play();
+    }
+
+   
+
+    
 
 }
 
