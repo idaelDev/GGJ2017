@@ -104,7 +104,7 @@ public class ConversationManager : Singleton<ConversationManager> {
         printer.endOfPrintEvent += EndGame;
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         endGameEvent();
         audio.Play();
@@ -115,10 +115,15 @@ public class ConversationManager : Singleton<ConversationManager> {
         printer.HideAnswer();
         NegociatorState += type;
         globalScore += type;
+
         //Compute stop conditions
         if (NegociatorState == lastState || NegociatorState > 1 || NegociatorState < -1)
         {
             stopCounter++;
+        }
+        else
+        {
+            stopCounter = 0;
         }
         if (stopCounter >= 3)
         {
@@ -141,9 +146,12 @@ public class ConversationManager : Singleton<ConversationManager> {
             printer.PrintDialog(dial.Text, dial.TimeOnScreen, NegociatorState);
             ///
         }
+        
+        //..
+
         else
         {
-            stopCounter = 0;
+            
             if (endByTimer)
             {
 

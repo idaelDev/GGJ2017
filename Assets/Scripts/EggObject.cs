@@ -34,6 +34,10 @@ public class EggObject : MonoBehaviour {
         {
             CookEgg();
             anim.SetFloat("CookePercentage", cookPercent);
+            if(cookPercent > 125.0f)
+            {
+                ConversationManager.Instance.EndGame();
+            }
         }
     }
 
