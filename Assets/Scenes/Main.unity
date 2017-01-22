@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookPercent: 0
-  cookBaseSpeed: 1
+  cookBaseSpeed: 0.8
   cookSpeedMultiplierUp: 2
   cookSpeedMultiplierDown: 0.5
   wellCookedAudio: {fileID: 44227763}
