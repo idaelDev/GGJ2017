@@ -1,47 +1,58 @@
-0,3,"Intro 1",,,,
-0,3,Intro 2,,,,
-0,1,Intro 3,NEU,POS,NEG,"Raccrocher"
-,,,Transi NEU,Transi POS,Transi NEG,"Raccrocher"
-1,3,"Oh, did you know Danald Tromp is now officially the new President of the United States?",,,,
+0,2,My dear boy!,,,,
+0,3,It's been so long since we last talked to each other!,,,,
+0,4,"Since I have you on the line, what about we learn to know each other?",,,,
+0,3,Just so I know what kind of man my daughter married.,,,,
+0,3,"Oh it won't be anything formal, don't worry!",,,,
+0,3,It's just to evaluate what kind of relation we can have.,,,,
+0,3,If it doesn't bother you.,Whatever.,I'm so glad having you on the phone!,It's not like I have anything else to do...,"Raccrocher"
+0,3,,Great.,Oh! What a sweet boy! You're such a blessing!,Keep it that way and I'll get upset!,"Raccrocher"
+1,5,"Oh, did you know Danald Tromp is now officially the new President of the United States?",,,,
 1,3,"I can't wait for that wall to be built, I can't stand those mexicans...",I think it's a little more complicated than that...,Yeah! We must BUILD A WALL!,"Oh sure, xenophobia is always the magic solution to everything!",
-1,1,,"You should read more about politics, my boy.",That's my boy! A true Republican!,"You'll see when the wall will be built, the crime rates will crash!",
-2,3,"I had the flu the other day, so I went to the doctor.",,,,
-2,3,I had to wait three hours before being received!,"Well, as long as he could get you a consultation...",They're really unprofessional.,These bastards! Always trying to save one's life!,"Raccrocher"
-2,1,,I guess you could say that...,Absolutely! Sometimes you have to guess how they got their PhD !,What do you know about medicine!,"Raccrocher"
-3,3,Et puis regarde tout ces ramiers qui ne cherchent pas de travail… ,,,,
-3,3,"C’est navrant tout de même, ils ne savent pas faire grand chose de leur vie, et ne tente même pas d’essayer ! ",Oh tu sais… Le boulot...,Au moins toi tu est en retraite !,Venant d’une retraitée...,"Raccrocher"
-3,1,,Le boulot c'est la vie tout de même !,"Oh oui ! Moi au moins, j’ai fait ma part !",Et alors ! Ce n’est pas ma faute si mon mari savait gagner sa vie !,"Raccrocher"
+1,4,,"You should read more about politics, my boy.",That's my boy! A true Republican!,"You'll see when the wall will be built, the crime rates will crash!",
+2,4,"I had the flu the other day, so I went to the doctor.",,,,
+2,4,I had to wait three hours before being received!,"Well, as long as he could get you a consultation...",They're really unprofessional.,These bastards! Always trying to save one's life!,"Raccrocher"
+2,4,,I guess you could say that...,Absolutely! Sometimes you have to guess how they got their PhD !,What do you know about medicine!,"Raccrocher"
+3,3,And look at those unemployed youngsters...,,,,
+3,4,"It's so sad, they don't know how to do anything, but they don't even try!",Well you know... I don't really care about work that much...,Good thing you're retired!,Hard to take from a retired person...,"Raccrocher"
+3,4,,"You still can't live without a job!","You said it, I did my part!",And so what! It's not my fault my husband knew how to take care of a household!,"Raccrocher"
 4,3,I was watching ToxNews the other day.,,,,
 4,3,It's so nice to know what's happening in the world.,,,,
 4,3,"Did you hear about these ""no go zones"" in Paris?",,,,
 4,3,"Streets aren't safe anymore, with these thugs everywhere.",,,,
 4,3,And we don't even know half of it...,"Yeah, sure, it's important to know what's going on.",Oh you're SO right! Good thing we have true journalists to keep us informed!,Seriously? There's nothing worse than this channel to turn your brain into scrambled eggs!,"Raccrocher"
-4,1,,At least we are on the same page.,Finally someone who sympathizes with other's concerns!,"Once again, completely out of touch! What the heck is my daughter doing with you?","Raccrocher"
-5,3,J'ai retrouvé une photo de Kiki en rangeant le meuble du salon la semaine dernière.,,,,
-5,3,Il n'existe rien de plus fidèle et adorable qu'un petit caniche !,,,,
-5,3,"Je sais que ni le facteur, ni les voisins, ni les mômes du quartier, ni ma belle-soeur, ni les prospecteurs étaient de mon avis",,,,
-5,3,mais nous savons bien que ce sont des sâles grincheux incapables d'aimer !,"Ah ça... Les chiens ne sont pas les meilleurs amis de l'Homme pour rien, hein !","J'ai jamais vu un petit chien aussi calin et aussi doux ! Si on pouvait le cloner et en distribuer une copie dans chaque foyer, la misère du monde regresserait sans aucun doute.",Tout le monde déteste ce chien. Il entretenait une relation amour/haine avec mon mollet... Combien de fois j'ai rêvé que je shootais dans ce sale roquet !,"Raccrocher"
-5,1,,Jamais une phrase n'a sonné aussi vrai ! ,Quel adorable petit bonhomme ! Vous ne pouvez pas me faire plus plaisir !,Il n'y a pas de place au Ciel pour les sacs à merdes comme toi.,"Raccrocher"
-6,3,"Bah tiens, hier je suis allée au supermarché.",,,,
-6,3,Je venais pour me ravitailler en pommes de terre et j'ai remarqué que la moitié du rayon avait été remplacé par cette saloperie de quinoa.,,,,
-6,3,Encore un coup de ces hispters avec leur barbe degueulasse qui ne bouffent que de la salade.,,,,
-6,3,On peut plus choisir ses patates tranquillement.,Tout le monde sait bien que de la bonne viande fraiche aux hormones n'a jamais fait de mal à personne.,Je n'ai jamais pu supporter ces personnes plus concernées par des bestioles que par leurs comparses humains !,"Bien sûr, nous savons tous que le rumsteack et la cuisine au beurre ont bien réussi aux artères de votre mari...","Raccrocher"
-6,1,,Mais je l'ai moi-même toujours dit !,Ravie de votre réponse ! Personne n'a envie d'un gendre ramollo !,J'ai de la peine à savoir si vous essayez de m'énerver ou de me briser le coeur ! VOUS ETES L'UN DES LEURS ???,"Raccrocher"
-7,3,TransportNeu1,,,,
-7,3,TransportNeu2,,,,
-7,3,TransportNeu3,TransportNEU,TransportPOS,TransportNEG,"Raccrocher"
-7,1,,TransTransportNEU,TransTransportPOS,TransTranportNEG,"Raccrocher"
-8,3,Franchement cette époque n’est plus de mon âge quand je vous vois avec vos “jeux vidéal” là.,,,,
-8,3,"Ca doit sacrément vous abrutir ! De mon temps, il nous fallait peu de chose pour nous divertir.",,,,
-8,3,"Pas besoin de tout ces écrans, on travaillait nous !",Ca vaut aussi bien qu'un bon livre.,Vous avez absolument raison ! Quel ignare que je suis !,"C’est sur que du temps des dinosaures, c’était compliqué de se divertir.","Raccrocher"
-8,1,,"Mais enfin, vous comparez deux choses complètement différentes ! Vos écrans là, c’est pas de l’art !",Mais évidemment que je sais mon petit ! Ne vous inquiétez pas je vais vous aider !,Je ne vous permet pas ! Mon expérience pourrait vous être primordiale si vous saviez comment en prendre compte.,"Raccrocher"
-9,3,"Tiens, j’ai encore un problême avec mon ordinateur.",,,,
-9,3,J’ai voulu lire un mail que m’a envoyé ma copine Gemraine et il m’a affiché un écran tout bleu...,,,,
-9,3,Impossible de jouer a mon jeu de cartes en ligne !,"Ah, bah faut appeler un réparateur informatique.",Laissez moi vous aidez la prochaine fois que je passe !,"Mettez les doigts dans la prise la prochaine fois, ca arrangera peut être quelque chose.","Raccrocher"
-9,1,,"Humpf… Oui, c’est vrai que c’est une solution.","Oh, que vous êtes bien aimable ! Ma fille a de la chance de vous avoir !",Comment osez vous me parler de la sorte !,"Raccrocher"
-10,3,J'étais au bal des Vieux Dansants la semaine dernière.,,,,
-10,3,J'ai croisé Germaine et son dentier flambant neuf.,,,,
-10,3,Je la vois bien faire ses petits sourires à René.,,,,
-10,3,"Au club, c'est le dernier homme encore potable qui entend encore plus d'un mot sur 5.",,,,
-10,3,"Germaine sait très bien qu'il est pour moi, comment peut-elle me faire ça à moi, sa meilleure amie ?""",Cette Germaine manque un peu de manière...,"Quelle honte ! Personne ne peut se prétendre ""ami"" avec un comportement pareil !",Quelle idée de se battre pour un vieux veuf sénil à moitié dans la tombe...,"Raccrocher"
-10,1,,Je vois où vous voulez en venir mais affirmez vous un peu voyons !,Je savais qu'il y avait du bon en vous ! Je pense  de plus en plus sérieusement à finir mes vieux jours dans votre chambre d'amis.,Vous n'avez aucun respect pour vos ainés ! J'espère que vos chiards mollassons vous laisserons mourir tout seul en maison de retraite !,"Raccrocher"
+4,4,,At least we are on the same page.,Finally someone who sympathizes with other's concerns!,"Once again, completely out of touch! What the heck is my daughter doing with you?","Raccrocher"
+5,4,I found an old picture of Poody while tidying the dining room cupboard last week.,,,,
+5,3,Nothing trustier and lovelier than a cute poodle! ,,,,
+5,4,"I know neither the postman, nor the neighbours, nor the kids who hang around our house ",,,,
+5,3,"nor my sister-in-law, nor the door-to-door salesmen thought like me.",,,,
+5,3,They're juste grumpy animal-hating people!,"Ah well, dogs aren't man's best friend for nothing!","If only we could put a Poody in everyone's home, the world would be a better place.",Everyone hated that dog. He had a love/hate relationship with my calves... How many times I dreamt of home-run kicking that mutt.,"Raccrocher"
+5,4,,"Never a sentence have rung so true!",You're such a nich boy! You can't make me happier!,There's no room in heaven for a piece of shit like you.,"Raccrocher"
+6,3,"Oh by the way, yesterday I went to the supermarket to stock on potatoes",,,,
+6,4,and I saw that half of the aisle was replaced by that quinoa bullshit.,,,,
+6,4,I guess it's them salad-eating hipsters with their dirty beards.,,,,
+6,3,You can't even buy your potatoes in peace these days.,Nothing beats up a good hormone-loaded steak!,How can they think of animals before their human fellows?,"Of course, and I guess a butter-based diet served your husband arteries so well...","Raccrocher"
+6,4,,That's what I always say!,I'm glad you think that! Nobody likes a wimpy son-in-law!,I can't even guess if you're trying to make me mad or sad! ARE YOU ONE OF THEM?,"Raccrocher"
+7,3,"Say, don't you think public transport are getting more and more dangerous these days?",,,,
+7,3,With all those very-low rise pants wearing youngsters around,,,,
+7,3,you can't help but wonder if they're going to assult you!,I guess it's getting you from point A to B.,The old school is the best school!,If only you'd had been able to keep your driver license...,"Raccrocher"
+7,4,,I have the right to demand a quality service!,That's a great idea! Have you thought about a career change?,It's not my fault other drivers can't dodge me!,"Raccrocher"
+8,4,"Frankly, I feel out of date when I see your generation and your electronic games thingies.",,,,
+8,4,"I'm sure it makes you dumber! In my day, we had fun with the tiniest thing",,,,
+8,3,"we worked for our fun, we didn't need all those screens!","They're as good as a good book.",You're absolutely right! I'm such an ignorant!,"Sticks and bones may break my bones, but that's all you had back then.","Raccrocher"
+8,4,,"Oh please, that's not the same thing at all! Your electronic thingamajigs aren't art!","I know my boy, I know. Don't worry, I can help you!",I don't allow you! My experience could be unvaluable to you if only you would listen to me!,"Raccrocher"
+9,3,"Here, I have another problem with my computer.",,,,
+9,4,I wanted to read an e-mail from my friend Bertha and it showed me a blue screen with weird messages.,,,,
+9,3,Now I can't play my online card game!,"Ah, maybe you should call a technician?","Next time I pass by, I'll fix it!",Be sure to put your fingers in the outlet next time!,"Raccrocher"
+9,4,,Hmpf... I guess I could do that.,Oh you're so kind! My daughter's so lucky to have you!,How dare you talk to me like that?,"Raccrocher"
+10,3,I was at the Geezers Dancers' ball last week.,,,,
+10,3,I met Bertha there and her brand new dentures.,,,,
+10,3,I can see the smiles she flashes to Walter.,,,,
+10,4,"He's the last man in our club who's still a little good-looking, and who can barely ear.",,,,
+10,3,"Bertha knows he's mine, how can she do that to me, her best friend?",That Bertha sure could behave a little better...,"What a shame! How could a ""friend"" have such behavior?",Why even go into a fight for an old senile half-dead widower?,"Raccrocher"
+10,4,,"I see where you are going, but you need to assert yourself!",I knew there was good in you! I'm thinking more and more about ending my old days in your guest room.,You really have no respect for your elders! I hope your shit-eating kids will let you die all alone in a retirement resident!,"Raccrocher"
+11,3,And how's it going at work? ,,,,
+11,3,"I'll admit I didn't quite grasp what it is, really...",,,,
+11,3,Do you really earn money just by looking stupid on the internets?,,,,
+11,3,That job didn't exist in my day. Well so did computers.,,,,
+11,3,"I really don't get it! Can't you do a real job for once, with a stable income?",It's just like any other work.,"It's not that complex, I'll explain it to you in details!",Time and progress will make you disappear... Like the dinosaurs did.,"Raccrocher"
+11,4,,I hope you put more passion in your work than in your answer.,"I'd love to listen to it, when I don't have anything else to do!","You bastard! If you fail, you won't even get social welfare!","Raccrocher"

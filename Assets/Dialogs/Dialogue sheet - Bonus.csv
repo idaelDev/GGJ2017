@@ -1,9 +1,15 @@
-0,1,Fin Topics POS
-1,1,Fin Topics NEU
-2,1,Fin Topics NEG
-3,1,Malus Arret Conv POS
-4,1,Malus Arret Conv NEU
-5,1,Malus Arret Conv NEG
-6,1,Arret aprres 3 fois même genre de topic POS
-7,1,Arret aprres 3 fois même genre de topic NEU
-8,1,Arret aprres 3 fois même genre de topic NEG
+0,4,"It was a real pleasure to talk to you, my boy! My daughter is lucky to have you!",Fin Topics POS
+1,5,"Well, I think I'm going to go back to what I have to do around the house, and you to... whatever you were doing.",Fin Topics NEU
+2,5,"Listen, I think that was enough for today. I hope you'll have better manners next time.",Fin Topics NEG
+3,2,Let me bother you a bit more.,Malus Arret Conv POS
+4,2,I would like to finish my sentence before listening to you.,Malus Arret Conv NEU
+5,2,Don't interrupt me when I speak! You insolent fool!,Malus Arret Conv NEG
+6,5,"My dear boy, you delight me! I can't wait to tell you about all my little stories! I think I'll come pass by your home immediately!",Arret aprres 3 fois même genre de topic POS
+7,4,"Well listen boy, I have the feeling that I bore you terribly, so I'll leave you be.",Arret aprres 3 fois même genre de topic NEU
+8,5,You are an insolent and disrespectful brat! How could my daughter chose to live her life with someone like you! Know that you're no longer welcomed in my home.,Arret aprres 3 fois même genre de topic NEG
+9,4,Oh! I understand! Go do what you need to do! I look forward to seeing you soon!,Fin enclenchée par le joueur POS
+10,4,"Of course, I'll see you soon anyway. We will have all the time to chat.",Fin enclenchée par le joueur NEU
+11,5,You surely have some gut to end the conversation on this! We'll continue from here next time!,Fin enclenchée par le joueur NEG
+12,3,I thought you were interested by what I was saying...,"Fin Timer POS"
+13,2,Am I bothering you?,Fin Timer NEU
+14,2,"If you're so damn bored, you could at least tell me!",Fin Timer NEG
