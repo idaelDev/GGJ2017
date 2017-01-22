@@ -125,7 +125,6 @@ public class ConversationManager : Singleton<ConversationManager> {
             if (endByTimer)
             {
 
-                ////ADD BONUS PHRASE HERE
                 LaunchBonusPhrases(END_TIMER_NEU, END_TIMER_POS, END_TIMER_NEG);
                 if (NegociatorState < 0)
                 {
