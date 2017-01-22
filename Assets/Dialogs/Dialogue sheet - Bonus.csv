@@ -2,7 +2,7 @@
 1,5,"Well, I think I'm going to go back to what I have to do around the house, and you to... whatever you were doing.",Fin Topics NEU
 2,5,"Listen, I think that was enough for today. I hope you'll have better manners next time.",Fin Topics NEG
 3,2,Let me bother you a bit more.,Malus Arret Conv POS
-4,2,I would like to finish my sentence before listening to you.,Malus Arret Conv NEU
+4,2,I would like to finish my sentence !,Malus Arret Conv NEU
 5,2,Don't interrupt me when I speak! You insolent fool!,Malus Arret Conv NEG
 6,5,"My dear boy, you delight me! I can't wait to tell you about all my little stories! I think I'll come pass by your home immediately!",Arret aprres 3 fois même genre de topic POS
 7,4,"Well listen boy, I have the feeling that I bore you terribly, so I'll leave you be.",Arret aprres 3 fois même genre de topic NEU
