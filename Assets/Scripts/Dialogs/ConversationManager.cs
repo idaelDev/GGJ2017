@@ -22,10 +22,14 @@ public class ConversationManager : Singleton<ConversationManager> {
     /// neg = upset
     /// pos = happy
     /// </summary>
-    public int NegociatorState { get; private set; }
+    private int negociatorState;
+    public int NegociatorState { get { return negociatorState; } private set { negociatorState = value; stateChangeEvent(negociatorState); } }
 
     public delegate void EndGameDelegate();
     public event EndGameDelegate endGameEvent;
+
+    public delegate void StateChangeDelegate(int val);
+    public event StateChangeDelegate stateChangeEvent;
 
     private int currentTopicID = 0;
     private TopicObject topic;
@@ -160,7 +164,6 @@ public class ConversationManager : Singleton<ConversationManager> {
                         if (NegociatorState < -1)
                         {
                             leaveSteps++;
-                            NegociatorState = -1;
                         }
                     }
                 }
@@ -173,7 +176,6 @@ public class ConversationManager : Singleton<ConversationManager> {
                         if (NegociatorState > 1)
                         {
                             leaveSteps++;
-                            NegociatorState = 1;
                         }
                     }
                 }

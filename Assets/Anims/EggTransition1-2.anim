@@ -181,7 +181,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 14ebb2284a4e58345803ebd482e7a0a1, type: 3}
     - time: 1
-      value: {fileID: 0}
+      value: {fileID: 21300000, guid: 14ebb2284a4e58345803ebd482e7a0a1, type: 3}
     attribute: m_Sprite
     path: EggBuf
     classID: 212
@@ -249,7 +249,7 @@ AnimationClip:
       isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: 14ebb2284a4e58345803ebd482e7a0a1, type: 3}
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 14ebb2284a4e58345803ebd482e7a0a1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

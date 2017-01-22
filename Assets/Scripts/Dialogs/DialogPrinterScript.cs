@@ -11,8 +11,9 @@ public class DialogPrinterScript : MonoBehaviour {
     public CanvasGroup group;
     public Image timerImg;
 
-
     public float timer = 5f;
+
+    public VoiceManager voiceManager;
 
     public delegate void EndOfPrintDelegate();
     public event EndOfPrintDelegate endOfPrintEvent;
@@ -37,6 +38,7 @@ public class DialogPrinterScript : MonoBehaviour {
         group.alpha = 0;
         group.interactable = false;
         group.blocksRaycasts = false;
+        voiceManager.Stop();
     }
 
     public void HideAnswer()
@@ -50,6 +52,7 @@ public class DialogPrinterScript : MonoBehaviour {
 
     public void setupAnswers(string neg, string neu, string pos, string go)
     {
+        voiceManager.Stop();
         buttons[0].GetComponentInChildren<Text>().text = neg;
         buttons[1].GetComponentInChildren<Text>().text = neu;
         buttons[2].GetComponentInChildren<Text>().text = pos;
@@ -78,6 +81,11 @@ public class DialogPrinterScript : MonoBehaviour {
 
     public void PrintDialog(string dial, double time, int state)
     {
+        if (state > 1)
+            state = 1;
+        if (state < -1)
+            state = -1;
+        voiceManager.VoiceTransition(state+1);
         StartCoroutine(PrintCoroutine(dial, time));
     }
 
