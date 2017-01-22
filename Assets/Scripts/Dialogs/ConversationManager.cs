@@ -143,7 +143,7 @@ public class ConversationManager : Singleton<ConversationManager> {
             {
 
                 ////ADD BONUS PHRASE HERE
-                printer.PrintDialog(topic.NegativeTransition, 1, NegociatorState);
+                printer.PrintDialog(topic.NegativeTransition, 4, NegociatorState);
                 if (NegociatorState < 0)
                 {
                     globalScore-=2;
@@ -153,7 +153,7 @@ public class ConversationManager : Singleton<ConversationManager> {
             {
                 if (type < 0)
                 {
-                    printer.PrintDialog(topic.NegativeTransition, 1, NegociatorState);
+                    printer.PrintDialog(topic.NegativeTransition, 4, NegociatorState);
                     if (NegociatorState < 0)
                     {
                         globalScore--;
@@ -166,7 +166,7 @@ public class ConversationManager : Singleton<ConversationManager> {
                 }
                 else if (type > 0)
                 {
-                    printer.PrintDialog(topic.PositiveTransition, 1, NegociatorState);
+                    printer.PrintDialog(topic.PositiveTransition, 4, NegociatorState);
                     if (NegociatorState > 0)
                     {
                         globalScore++;
@@ -179,7 +179,7 @@ public class ConversationManager : Singleton<ConversationManager> {
                 }
                 else
                 {
-                    printer.PrintDialog(topic.NeutralTransition, 1, NegociatorState);
+                    printer.PrintDialog(topic.NeutralTransition, 4, NegociatorState);
                 }
             }
             currentTopicID++;
@@ -192,7 +192,7 @@ public class ConversationManager : Singleton<ConversationManager> {
     public void GoAnswer()
     {
         printer.HideAnswer();
-        printer.PrintDialog(topic.LeaveTransition, 1, NegociatorState);
+        printer.PrintDialog(topic.LeaveTransition, 4, NegociatorState);
         leaveSteps--;
         if(leaveSteps <= 0)
         {
