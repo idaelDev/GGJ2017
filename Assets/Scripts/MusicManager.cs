@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MusicManager : MonoBehaviour {
+public class MusicManager : Singleton<MusicManager> {
 
     public AudioClip intro;
     public AudioClip main;
 
-    AudioSource source;
+    public AudioSource source;
 
 	// Use this for initialization
 	void Start () {

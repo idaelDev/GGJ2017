@@ -221,7 +221,8 @@ public class ConversationManager : Singleton<ConversationManager> {
     public void EndGame()
     {
         endGameEvent();
-        GetComponent<AudioSource>().Play();
+        if(!GetComponent<AudioSource>().isPlaying)
+            GetComponent<AudioSource>().Play();
     }
 
    
