@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : Singleton<MainMenu> {
 
     public CanvasGroup mainScreen;
     public CanvasGroup credits;
     public CanvasGroup TutoGroup;
+    public CanvasGroup endGroup;
 
     public delegate void StartGameDelegate();
     public event StartGameDelegate startGameEvent;
@@ -14,11 +16,26 @@ public class MainMenu : Singleton<MainMenu> {
     public AudioSource egg;
     public DialogPrinterScript dial;
 
+    void Start()
+    {
+        ConversationManager.Instance.endGameEvent += ShowEnd;
+    }
+
+    private void ShowEnd()
+    {
+        ShowGroup(endGroup, true);
+    }
+
     private void ShowGroup(CanvasGroup group, bool show)
     {
         group.alpha = (show) ? 1 : 0;
         group.interactable = show;
         group.blocksRaycasts = show;
+    }
+
+    public void OnEnd()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void OnPlay()

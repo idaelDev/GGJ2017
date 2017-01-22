@@ -172,13 +172,12 @@ public class ConversationManager : Singleton<ConversationManager> {
     public void GoAnswer()
     {
         printer.HideAnswer();
-        printer.PrintDialog(topic.LeaveTransition, 4, NegociatorState);
         numberOfStepForLeaving--;
         if (numberOfStepForLeaving <= 0)
         {
             Debug.Log("GAME OVER");
             switchToEnd();
-            LaunchBonusPhrases(PLAYER_END_NEU, PLAYER_END_POS, PLAYER_END_NEG);
+            printer.PrintDialog(topic.LeaveTransition, 4, NegociatorState);
         }
         else
         {

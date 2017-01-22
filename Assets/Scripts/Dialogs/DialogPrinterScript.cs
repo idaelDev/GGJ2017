@@ -35,6 +35,7 @@ public class DialogPrinterScript : MonoBehaviour {
 
     private void HideGroup()
     {
+        StopAllCoroutines();
         group.alpha = 0;
         group.interactable = false;
         group.blocksRaycasts = false;

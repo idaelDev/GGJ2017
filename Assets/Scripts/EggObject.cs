@@ -37,8 +37,8 @@ public class EggObject : MonoBehaviour {
             anim.SetFloat("CookePercentage", cookPercent);
             if(cookPercent > 125.0f)
             {
+                EggState = 7;
                 ConversationManager.Instance.EndGame();
-                EggState++;
             }
         }
     }
